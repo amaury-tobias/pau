@@ -15,7 +15,7 @@ import Vue from 'vue'
 
 export default Vue.extend({
   data: () => ({
-    isPortrait: true
+    isPortrait: true,
   }),
   mounted() {
     this.handleOrientationChange()
@@ -26,8 +26,8 @@ export default Vue.extend({
       const orientation = window.orientation
       if (Math.abs(Number(orientation)) === 90) this.isPortrait = false
       else this.isPortrait = true
-    }
-  }
+    },
+  },
 })
 </script>
 

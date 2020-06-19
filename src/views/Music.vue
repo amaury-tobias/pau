@@ -208,7 +208,7 @@ export default {
         artist: 'Ken Arai',
         cover: '/img/covers/1.jpg',
         source: '/songs/NextToYou.mp3',
-        bg: '/img/f1.png'
+        bg: '/img/f1.png',
       },
       {
         color: '#fcc277',
@@ -216,61 +216,61 @@ export default {
         artist: 'Leonard Cohen',
         cover: '/img/covers/2.jpg',
         source: '/songs/NextToYou.mp3',
-        bg: '/img/f2.png'
+        bg: '/img/f2.png',
       },
       {
         name: 'Extreme Ways',
         artist: 'Moby',
         cover: '/img/covers/3.jpg',
         source: '/songs/NextToYou.mp3',
-        bg: '/img/f5.png'
+        bg: '/img/f5.png',
       },
       {
         color: '#0000ff',
         name: 'Butterflies',
         artist: 'Sia',
         cover: '/img/covers/4.jpg',
-        source: '/songs/NextToYou.mp3'
+        source: '/songs/NextToYou.mp3',
       },
       {
         color: '#0000ff',
         name: 'The Final Victory',
         artist: 'Haggard',
         cover: '/img/covers/5.jpg',
-        source: '/songs/NextToYou.mp3'
+        source: '/songs/NextToYou.mp3',
       },
       {
         color: '#0000ff',
         name: 'Genius ft. Sia, Diplo, Labrinth',
         artist: 'LSD',
         cover: '/img/covers/6.jpg',
-        source: '/songs/NextToYou.mp3'
+        source: '/songs/NextToYou.mp3',
       },
       {
         color: '#0000ff',
         name: 'The Comeback Kid',
         artist: 'Lindi Ortega',
         cover: '/img/covers/7.jpg',
-        source: '/songs/NextToYou.mp3'
+        source: '/songs/NextToYou.mp3',
       },
       {
         color: '#0000ff',
         name: 'Overdose',
         artist: 'Grandson',
         cover: '/img/covers/8.jpg',
-        source: '/songs/NextToYou.mp3'
+        source: '/songs/NextToYou.mp3',
       },
       {
         color: '#0000ff',
         name: "Rag'n'Bone Man",
         artist: 'Human',
         cover: '/img/covers/9.jpg',
-        source: '/songs/NextToYou.mp3'
-      }
+        source: '/songs/NextToYou.mp3',
+      },
     ],
     currentTrack: null,
     currentTrackIndex: 0,
-    transitionName: null
+    transitionName: null,
   }),
   methods: {
     play() {
@@ -361,7 +361,7 @@ export default {
           this.audio.pause()
         }
       }, 300)
-    }
+    },
   },
   created() {
     this.currentTrack = this.tracks[0]
@@ -378,7 +378,7 @@ export default {
       this.nextTrack()
       this.isTimerPlaying = true
     }
-  }
+  },
 }
 </script>
 

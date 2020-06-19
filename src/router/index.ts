@@ -7,19 +7,19 @@ const routes: Array<RouteConfig> = [
   {
     path: '/',
     name: 'Home',
-    component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue')
+    component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue'),
   },
   {
     path: '/music',
     name: 'Music',
     component: () =>
-      import(/* webpackChunkName: "music" */ '../views/Music.vue')
-  }
+      import(/* webpackChunkName: "music" */ '../views/Music.vue'),
+  },
 ]
 
 const router = new VueRouter({
   mode: 'history',
-  routes
+  routes,
 })
 
 export default router
