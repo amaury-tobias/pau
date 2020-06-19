@@ -6,6 +6,10 @@
         <p>💛❤🧡💛💚💙💜🤎🖤</p>
       </div>
     </div>
+    <div v-if="updateExist" class="update-sw">
+      <p>Actualizacion Disponible</p>
+      <button @click="refreshApp">Actializar</button>
+    </div>
     <router-view />
   </div>
 </template>
@@ -16,7 +20,19 @@ import Vue from 'vue'
 export default Vue.extend({
   data: () => ({
     isPortrait: true,
+    registration: {} as ServiceWorkerRegistration,
+    updateExist: false,
+    refreshing: false,
   }),
+  created() {
+    document.addEventListener('swUpdated', this.updateAvailable, { once: true })
+
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (this.refreshing) return
+      this.refreshing = true
+      window.location.reload()
+    })
+  },
   mounted() {
     this.handleOrientationChange()
     window.addEventListener('orientationchange', this.handleOrientationChange)
@@ -26,6 +42,17 @@ export default Vue.extend({
       const orientation = window.orientation
       if (Math.abs(Number(orientation)) === 90) this.isPortrait = false
       else this.isPortrait = true
+    },
+    updateAvailable(event: Event) {
+      this.registration = (event as CustomEvent<
+        ServiceWorkerRegistration
+      >).detail
+      this.updateExist = true
+    },
+    refreshApp() {
+      this.updateExist = false
+      if (!this.registration || !this.registration.waiting) return
+      this.registration.waiting.postMessage({ type: 'SKIP_WAITING' })
     },
   },
 })
@@ -69,5 +96,13 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.update-sw {
+  border-radius: 12px;
+  position: absolute;
+  background: #fff;
+  padding: 0.5rem 1rem;
+  right: 10px;
+  bottom: 10px;
 }
 </style>
