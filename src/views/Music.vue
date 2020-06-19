@@ -417,7 +417,7 @@ svg {
   z-index: 99;
   background: #eef3f7;
   width: 410px;
-  /* min-height: 480px; */
+  min-height: 300px;
   box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
   border-radius: 15px;
   padding: 30px;
