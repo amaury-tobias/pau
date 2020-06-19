@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "14e036a144ee91b13d26",
+    "revision": "46f2ff21d67895fe9c88",
     "url": "/css/app.5904baea.css"
   },
   {
-    "revision": "06459674efad0d8c2ca2",
-    "url": "/css/music.17491e29.css"
+    "revision": "ea3b783b94a7d6f21a37",
+    "url": "/css/music.f00c0ab6.css"
   },
   {
     "revision": "5edc441493523ce32049746111d6e14c",
@@ -88,24 +88,24 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/logo.82b9c7a5.png"
   },
   {
-    "revision": "df9e101d1decad8bad3443a1047cb896",
+    "revision": "d7342a9ce74b33d1f3dd1e7459463bdf",
     "url": "/index.html"
   },
   {
-    "revision": "14e036a144ee91b13d26",
-    "url": "/js/app.749887dd.js"
+    "revision": "46f2ff21d67895fe9c88",
+    "url": "/js/app.b3252d67.js"
   },
   {
-    "revision": "e50d7b0101fb4b9836fb",
-    "url": "/js/chunk-vendors.6222b2be.js"
+    "revision": "b267123e847550071202",
+    "url": "/js/chunk-vendors.d8ff82b8.js"
   },
   {
-    "revision": "60c798a4a19a095dc07c",
-    "url": "/js/home.8221e3f6.js"
+    "revision": "41e55227d5d05f29d065",
+    "url": "/js/home.0b0d741d.js"
   },
   {
-    "revision": "06459674efad0d8c2ca2",
-    "url": "/js/music.616f784b.js"
+    "revision": "ea3b783b94a7d6f21a37",
+    "url": "/js/music.d308ad8b.js"
   },
   {
     "revision": "f6b0b460bca25761f027e68683e9e95d",
@@ -114,6 +114,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
     "url": "/robots.txt"
+  },
+  {
+    "revision": "316f712962ed757e7062abce6faad68c",
+    "url": "/songs/AURORA-IWentTooFar.mp3"
   },
   {
     "revision": "91d078a2cab2a70f5e8eee32539ff0b3",
