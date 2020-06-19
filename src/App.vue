@@ -8,7 +8,7 @@
     </div>
     <div v-if="updateExist" class="update-sw">
       <p>Actualizacion Disponible</p>
-      <button @click="refreshApp">Actializar</button>
+      <button @click="refreshApp">Actualizar</button>
     </div>
     <router-view />
   </div>
