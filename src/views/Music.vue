@@ -27,12 +27,7 @@
       "
     />
 
-    <div
-      class="page_image"
-      :style="{ backgroundImage: `url(${currentTrack.bg})` }"
-    ></div>
-
-    <transition-group :name="transitionName">
+    <!-- <transition-group :name="transitionName">
       <div
         v-show="$index === currentTrackIndex"
         class="page_image"
@@ -40,7 +35,7 @@
         v-for="(track, $index) in tracks"
         :key="track.name"
       ></div>
-    </transition-group>
+    </transition-group> -->
 
     <div class="wrapper">
       <div class="player">
@@ -82,10 +77,10 @@
         <div class="progress" ref="progress">
           <div class="progress__top">
             <div class="progress__time">{{ currentTime() }}</div>
-            <div class="album-info" v-if="currentTrack">
+            <!-- <div class="album-info" v-if="currentTrack">
               <div class="album-info__name">{{ currentTrack.artist }}</div>
               <div class="album-info__track">{{ currentTrack.name }}</div>
-            </div>
+            </div> -->
             <div class="progress__duration">
               {{ duration() }}
             </div>
@@ -421,8 +416,8 @@ svg {
 .player {
   z-index: 99;
   background: #eef3f7;
-  width: 410px;
-  min-height: 480px;
+  min-width: 400px;
+  /* min-height: 480px; */
   box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
   border-radius: 15px;
   padding: 30px;
@@ -599,7 +594,7 @@ svg {
 }
 .progress {
   width: 100%;
-  margin-top: 30px;
+  margin-top: 20px;
   user-select: none;
 }
 .progress__top {
