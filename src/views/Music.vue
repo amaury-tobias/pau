@@ -17,7 +17,14 @@
       :hoverEffect="false"
       clickMode="push"
       :particleSize="3"
-      style="width: 100%;height: 100%;position: absolute;z-index: 0;top: 0px;left: 0px;"
+      style="
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 0;
+        top: 0px;
+        left: 0px;
+      "
     />
 
     <div
@@ -74,12 +81,14 @@
         </div>
         <div class="progress" ref="progress">
           <div class="progress__top">
-            <div class="progress__time">{{ currentTime }}</div>
+            <div class="progress__time">{{ currentTime() }}</div>
             <div class="album-info" v-if="currentTrack">
               <div class="album-info__name">{{ currentTrack.artist }}</div>
               <div class="album-info__track">{{ currentTrack.name }}</div>
             </div>
-            <div class="progress__duration">{{ duration }}</div>
+            <div class="progress__duration">
+              {{ duration() }}
+            </div>
           </div>
           <div class="progress__bar" @click="clickProgress">
             <div class="progress__current" :style="{ width: barWidth }"></div>
@@ -196,10 +205,7 @@ export default {
   data: () => ({
     particles: 0,
     audio: null,
-    circleLeft: null,
     barWidth: null,
-    duration: null,
-    currentTime: null,
     isTimerPlaying: false,
     tracks: [
       {
@@ -215,7 +221,7 @@ export default {
         name: 'Everybody Knows',
         artist: 'Leonard Cohen',
         cover: '/img/covers/2.jpg',
-        source: '/songs/NextToYou.mp3',
+        source: '/songs/AURORA-IWentTooFar.mp3',
         bg: '/img/f2.png',
       },
       {
@@ -273,6 +279,17 @@ export default {
     transitionName: null,
   }),
   methods: {
+    duration() {
+      let durmin = Math.floor(this.audio.duration / 60)
+      let dursec = Math.floor(this.audio.duration - durmin * 60)
+      if (durmin < 10) {
+        durmin = '0' + durmin
+      }
+      if (dursec < 10) {
+        dursec = '0' + dursec
+      }
+      return durmin + ':' + dursec
+    },
     play() {
       if (this.audio.paused) {
         this.audio.play()
@@ -282,28 +299,20 @@ export default {
         this.isTimerPlaying = false
       }
     },
-    generateTime() {
-      const width = (100 / this.audio.duration) * this.audio.currentTime
-      this.barWidth = width + '%'
-      this.circleLeft = width + '%'
-      let durmin = Math.floor(this.audio.duration / 60)
-      let dursec = Math.floor(this.audio.duration - durmin * 60)
+    currentTime() {
       let curmin = Math.floor(this.audio.currentTime / 60)
       let cursec = Math.floor(this.audio.currentTime - curmin * 60)
-      if (durmin < 10) {
-        durmin = '0' + durmin
-      }
-      if (dursec < 10) {
-        dursec = '0' + dursec
-      }
       if (curmin < 10) {
         curmin = '0' + curmin
       }
       if (cursec < 10) {
         cursec = '0' + cursec
       }
-      this.duration = durmin + ':' + dursec
-      this.currentTime = curmin + ':' + cursec
+      return curmin + ':' + cursec
+    },
+    generateTime() {
+      const width = (100 / this.audio.duration) * this.audio.currentTime
+      this.barWidth = width + '%'
     },
     updateBar(x) {
       const progress = this.$refs.progress
@@ -317,7 +326,6 @@ export default {
         percentage = 0
       }
       this.barWidth = percentage + '%'
-      this.circleLeft = percentage + '%'
       this.audio.currentTime = (maxduration * percentage) / 100
       this.audio.play()
     },
@@ -350,7 +358,6 @@ export default {
     },
     resetPlayer() {
       this.barWidth = 0
-      this.circleLeft = 0
       this.audio.currentTime = 0
       this.audio.src = this.currentTrack.source
       this.particles += 1
