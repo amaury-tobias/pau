@@ -1,11 +1,15 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3d1c2cd4a282db759a64",
+    "revision": "03697951c55663578c80",
     "url": "/css/app.2ab3aa53.css"
   },
   {
-    "revision": "36e4fc2bcb60696c840d",
-    "url": "/css/music.c2e37bc5.css"
+    "revision": "d4e2eb893def357d3849",
+    "url": "/css/home.ebe8cac9.css"
+  },
+  {
+    "revision": "f72988c24caa160705fd",
+    "url": "/css/music.f379174f.css"
   },
   {
     "revision": "5edc441493523ce32049746111d6e14c",
@@ -84,28 +88,28 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/girasol.jpg"
   },
   {
-    "revision": "82b9c7a5a3f405032b1db71a25f67021",
-    "url": "/img/logo.82b9c7a5.png"
+    "revision": "fecc2a5c72e9dbd6d3058d1f94c37438",
+    "url": "/img/logo.fecc2a5c.png"
   },
   {
-    "revision": "9cd027f37e75310ed3335f6146b2bc70",
+    "revision": "54be43ca16e5feb1946afb5683c7ac53",
     "url": "/index.html"
   },
   {
-    "revision": "3d1c2cd4a282db759a64",
-    "url": "/js/app.e8906f52.js"
+    "revision": "03697951c55663578c80",
+    "url": "/js/app.75e22338.js"
   },
   {
-    "revision": "aaabec69870b9086f679",
-    "url": "/js/chunk-vendors.557e005c.js"
+    "revision": "3e669e290fdd119f1778",
+    "url": "/js/chunk-vendors.1cdbb733.js"
   },
   {
-    "revision": "8dd49fd387154af79f90",
-    "url": "/js/home.0983938b.js"
+    "revision": "d4e2eb893def357d3849",
+    "url": "/js/home.309afb74.js"
   },
   {
-    "revision": "36e4fc2bcb60696c840d",
-    "url": "/js/music.b6b0f543.js"
+    "revision": "f72988c24caa160705fd",
+    "url": "/js/music.ea1edb9d.js"
   },
   {
     "revision": "f6b0b460bca25761f027e68683e9e95d",
