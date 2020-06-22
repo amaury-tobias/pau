@@ -1,23 +1,21 @@
 <template>
-  <div id="app">
-    <div v-if="!isPortrait" class="portrait">
-      <div class="portrait-container">
-        <p>Por favor coloca el dispositivo en modo retrato</p>
-        <p>💛❤🧡💛💚💙💜🤎🖤</p>
-      </div>
+  <div v-if="!isPortrait" class="portrait">
+    <div class="portrait-container">
+      <p>Por favor coloca el dispositivo en modo retrato</p>
+      <p>💛❤🧡💛💚💙💜🤎🖤</p>
     </div>
-    <div v-if="updateExist" class="update-sw">
-      <p>Actualizacion Disponible</p>
-      <button @click="refreshApp">Actualizar</button>
-    </div>
-    <router-view />
   </div>
+  <div v-if="updateExist" class="update-sw">
+    <p>Actualizacion Disponible</p>
+    <button @click="refreshApp">Actualizar</button>
+  </div>
+  <router-view />
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import { defineComponent } from 'vue'
 
-export default Vue.extend({
+export default defineComponent({
   data: () => ({
     isPortrait: true,
     registration: {} as ServiceWorkerRegistration,
